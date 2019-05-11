@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+spring:
+  profiles: dev   #开发环境
+  application:
+    name: microservicecloud-config-wode-dev
+---
+spring:
+  profiles: test  #测试环境
+  application:
+    name: microservicecloud-config-wode-test
+    
+    
+#必须使用UTF-8的格式进行保存    
