@@ -1,0 +1,90 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8001
+  
+spring:
+  profiles: dev
+  application:
+    name: microservicecloud-config-dept-client  
+  datasource:
+    # 当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    # mysql驱动包
+    driver-class-name: org.gjt.mm.mysql.Driver
+    # 数据库名称
+    url: jdbc:mysql://localhost:3306/cloudbd01?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+    dbcp2:
+       # 数据库连接池的最小维持连接数
+      min-idle: 5
+      # 初始化连接数
+      initial-size: 5
+      # 最大连接数
+      max-total: 5
+      # 等待连接获取的最大超时时间
+      max-wait-millis: 200
+      
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      #单机版 defaultZone: http://localhost:7001/eureka
+      #集群版
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: dept-8001.com  #给注册进eureka服务端的客户端服务取别名
+    prefer-ip-address: true     #访问路径可以显示IP地址         
+      
+info: 
+  app.name: wode-microservicecloud-springcloudfig01
+  company.name: www.wode.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$      
+
+---
+server:
+  port: 8001
+  
+spring:
+  profiles: test
+  application:
+    name: microservicecloud-config-dept-client  
+  datasource:
+    # 当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    # mysql驱动包
+    driver-class-name: org.gjt.mm.mysql.Driver
+    # 数据库名称
+    url: jdbc:mysql://localhost:3306/cloudbd02?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+    dbcp2:
+       # 数据库连接池的最小维持连接数
+      min-idle: 5
+      # 初始化连接数
+      initial-size: 5
+      # 最大连接数
+      max-total: 5
+      # 等待连接获取的最大超时时间
+      max-wait-millis: 200
+      
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      #单机版 defaultZone: http://localhost:7001/eureka
+      #集群版
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: dept-8001.com  #给注册进eureka服务端的客户端服务取别名
+    prefer-ip-address: true     #访问路径可以显示IP地址         
+      
+info: 
+  app.name: wode-microservicecloud-springcloudfig01
+  company.name: www.wode.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$      
+            
