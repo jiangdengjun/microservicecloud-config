@@ -9,12 +9,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: microservicecloud-config-eureka-client
-    
-spring:
-  profiles: test
-  application:
-    name: microservicecloud-config-eureka-client    
+    name: microservicecloud-config-eureka-client  
     
 eureka: 
   instance:
@@ -26,7 +21,7 @@ eureka:
       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
       #单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       #集群
-      defaultZone: http://eureka7002.com:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
       
 ---
 server:
@@ -47,6 +42,6 @@ eureka:
       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
       #单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       #集群
-      defaultZone: http://eureka7002.com:7002/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
               
         
